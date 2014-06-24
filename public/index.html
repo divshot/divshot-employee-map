@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Divshot</title>
+    <script src="/bower_components/platform/platform.js"></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html">
+    <link rel="import" href="/components/divshot-employee-map.html">
+    <link rel="import" href="/components/divshot-employee.html">
+    <style>
+      body {
+        font:500 14px/21px 'Helvetica Neue', Helvetica, Arials;
+        width: 1080px;
+        margin: 0 auto;
+      }
+
+      divshot-employee-map {
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Divshot is a company. We have employees. Here we are:</h1>
+    <divshot-employee-map>
+      <divshot-employee 
+        name="Michael Bleigh" 
+        location="New Orleans" 
+        avatar="http://www.divshot.com/assets/team/michaelbleigh-e43b3bfc130619ffc9e4eac05a0147c8.jpeg">
+      </divshot-employee>
+
+      <divshot-employee
+        name="Jake Johnson"
+        location="Las Vegas"
+        avatar="http://www.divshot.com/assets/team/jakejohnson-c867cabcca4a000e908b875a9d345ff4.png">
+      </divshot-employee>
+
+      <divshot-employee
+        name="Scott Corgan"
+        location="St. Louis Arch"
+        avatar="http://www.divshot.com/assets/team/scottcorgan-dcc25b7bf02bb900d44764ad80d85c83.jpeg">
+      </divshot-employee>    
+
+      <divshot-employee
+        name="Robert Willard"
+        location="The Alamo"
+        avatar="http://www.divshot.com/assets/team/robertwillard-b246c15c28d2dd3d9cd620dea27e422f.png">
+      </divshot-employee>    
+
+      <divshot-employee 
+        name="Collin Miller" 
+        location="Cape Canaveral" 
+        avatar="http://www.divshot.com/assets/team/collinmiller-9679dd5bfde2bea57eb786b47df6f647.jpeg">
+      </divshot-employee>
+
+      <divshot-employee 
+        name="Kevin Chau" 
+        location="Largest Ball of Twine" 
+        avatar="http://www.divshot.com/assets/team/kevinchau-cc8e79a62ad0cfb677295a05184768dd.jpg">
+      </divshot-employee>
+
+      <divshot-employee 
+        name="Mary Best" 
+        location="Pikes Peak" 
+        avatar="http://www.divshot.com/assets/team/marybest-239e2a434bc536e2bbe33a7b7858f40e.jpg">
+      </divshot-employee>
+    </divshot-employee-map>
+
+    <h2>Locations Listed Are a Deliberate Lie ;)</h2>
+  </body>
+</html>

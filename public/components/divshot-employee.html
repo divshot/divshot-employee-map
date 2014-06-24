@@ -1,0 +1,40 @@
+<polymer-element name="divshot-employee" attributes="name location avatar">
+  <script>
+    Polymer("divshot-employee", {
+      ready: function() {
+        this.map = this.parentNode.map;
+        this.geocoder = new google.maps.Geocoder();
+        this.geocoder.geocode({address: this.location}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            this.infoWindow = new google.maps.InfoWindow({
+              content: "<div>" +
+                "<img src=\"" + this.avatar + "\" style=\"width: 64px; height: 64px\">" +
+                "<p>" +
+                  this.name +
+                "</p>" +
+                "<p>" +
+                  this.location +
+                "</p>" +
+              "</div>"
+            });
+
+            this.marker = new google.maps.Marker({
+              map: this.map,
+              position: results[0].geometry.location,
+              title: this.name,
+            });
+
+            google.maps.event.addListener(this.marker, 'click', function() {
+              this.infoWindow.open(this.map, this.marker);
+            }.bind(this));
+
+            this.infoWindow.open(this.map, this.marker);
+          }
+          else {
+            console.error("Geocode was not successful for the following reason: " + status);
+          }
+        }.bind(this));
+      }
+    });
+  </script>
+</polymer-element>
